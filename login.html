@@ -169,24 +169,25 @@
     <div class="login-container">
         <h2 class="login-title">Iniciar Sesión</h2>
 
-        <form action="index.html" method="GET">
+        <form action="login.php" method="POST"> 
+    
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                <input type="email" class="form-control" name="correoElectronico" placeholder="Correo electrónico" required> 
             </div>
-
+        
             <div class="form-group password-container">
-                <input type="password" class="form-control" id="passwordField" placeholder="Contraseña" required>
+                <input type="password" class="form-control" id="passwordField" name="contrasena" placeholder="Contraseña" required> 
                 <span class="eye-icon" id="togglePassword">
                     <i class="fa-regular fa-eye-slash" id="eyeIcon"></i>
                 </span>
             </div>
-
+        
             <button type="submit" class="btn-login">Iniciar sesión</button>
-
+        
             <div class="text-center">
                 <a href="recupera_contraseña.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
             </div>
-
+        
             <a href="crea_cuenta.html" class="create-account-btn">¿Nuevo? Crear una Cuenta</a>
         </form>
     </div>
