@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca De</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css"
+        integrity="sha512-GmZYQ9SKTnOea030Tbiat0Y+jhnYLIpsGAe6QTnToi8hI2nNbVMETHeK4wm4MuYMQdrc38x+sX77+kVD01eNsQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 50px 0 30px;
+            animation: slideIn 0.5s ease-in;
+            color: coral;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section-content {
+            text-align: justify;
+            /* Justifica el texto */
+            line-height: 1.6;
+            /* Mejora la legibilidad */
+            margin-bottom: 30px;
+            /* Espaciado inferior */
+            padding: 15px;
+            /* Espaciado interno */
+            background-color: #ffffff;
+            /* Fondo blanco */
+            border-radius: 10px;
+            /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-card img,
+        .objective-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .values-section,
+        .objectives-section {
+            margin: 50px 0;
+        }
+
+        .value-card,
+        .objective-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            /* Espaciado entre tarjetas */
+        }
+
+        .objective-card {
+            background-color: #f0f8ff;
+            /* Fondo claro para resaltar */
+            border: 2px solid coral;
+            /* Borde color coral */
+        }
+
+        .value-card:hover,
+        .objective-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20 px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+
+        footer a {
+            color: #f8f9fa;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+        <div class="container d-flex align-items-center">
+            <img src="img/logo1.png" alt="100" height="100" class="navbar-logo">
+            <div class="search-container d-none d-lg-flex">
+                <form class="d-flex w-100">
+                    <div class="position-relative w-100">
+                        <input type="text" class="form-control search-input"
+                            placeholder="Buscar por producto, categoría y más">
+                        <button class="btn search-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span><i id="barras" class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item acerca-item">
+                        <a class="nav-link active" href="acerca_de.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item iconos">
+                        <a class="nav-link" href="login.html"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                    <li class="nav-item iconos">
+                        <a class="nav-link" href="favoritos.html"><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item iconos">
+                        <a class="nav-link" href="carrito.html"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT SECTION -->
+    <section class="container my-5 pt-5">
+        <h2 class="section-title">¿Quiénes Somos?</h2>
+        <div class="section-content">
+            <div class="section-content">
+                <p>
+                    En Chameleons, somos una empresa dedicada a ofrecer productos de alta calidad y diseño innovador en
+                    ropa, zapatos y accesorios para hombres, mujeres, niños y niñas. Nuestro objetivo es brindar una
+                    experiencia de compra única, adaptada a las necesidades de cada cliente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Nuestra Historia -->
+        <h2 class="section-title">Nuestra Historia</h2>
+        <div class="section-content">
+            <div class="section-content">
+                <p>
+                    Chameleons fue fundada en 2010 con la visión de revolucionar el mercado de la moda, ofreciendo
+                    productos
+                    de calidad a precios accesibles. Desde nuestros primeros días en una pequeña tienda local, hemos
+                    crecido
+                    y hoy somos una marca reconocida a nivel nacional, llevando estilo a cada rincón.
+                </p>
+            </div>
+        </div>
+
+        <!-- Misión -->
+        <h2 class="section-title">Nuestra Misión</h2>
+        <div class="section-content">
+            <div class="section-content">
+                <p>
+                    Proporcionar moda accesible y versátil para toda la familia, ofreciendo productos que no solo sean
+                    de
+                    alta calidad y a la moda, sino también cómodos, para que cada persona pueda expresarse a través de
+                    su
+                    estilo. Nos comprometemos a ser un referente de innovación y sostenibilidad en la industria,
+                    mientras
+                    brindamos una experiencia de compra excepcional a nuestros clientes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Visión -->
+        <h2 class="section-title">Nuestra Visión</h2>
+        <div class="section-content">
+            <div class="section-content">
+                <p>
+                    Convertirnos en la marca líder en ropa y accesorios a nivel internacional, reconocida por nuestra
+                    capacidad de adaptarnos a las tendencias y necesidades de nuestros clientes. Nos comprometemos a
+                    ofrecer
+                    siempre lo mejor a través de productos modernos, accesibles y de excelente calidad, mientras
+                    promovemos
+                    la sostenibilidad y la inclusión en la moda.
+                </p>
+            </div>
+        </div>
+
+        <!-- Valores -->
+        <h2 class="section-title">Nuestros Valores</h2>
+        <div class="values-section row">
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/adaptabilidad.jpg" alt="Adaptabilidad" class="img-fluid">
+                    <h4>Adaptabilidad</h4>
+                    <p>La capacidad de evolucionar con las tendencias de la moda y las necesidades de nuestros
+                        clientes.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/diversidad.jpg" alt="Diversidad" class="img-fluid">
+                    <h4>Diversidad</h4>
+                    <p>Celebramos la diversidad en estilos, tallas y preferencias, asegurando que todos se sientan
+                        representados.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/calidad.jpg" alt="Calidad" class="img-fluid">
+                    <h4>Calidad</h4>
+                    <p>Nos comprometemos a ofrecer productos de alta calidad que sean duraderos y cómodos.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/sostenibilidad.jpg" alt="Sostenibilidad" class="img-fluid">
+                    <h4>Sostenibilidad</h4>
+                    <p>Promovemos prácticas responsables en la producción y distribución de nuestros productos.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/creatividad.jpg" alt="Creatividad" class="img-fluid">
+                    <h4>Creatividad</h4>
+                    <p>Fomentamos la originalidad y la expresión personal a través de la moda.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/accesibilidad.jpg" alt="Accesibilidad" class="img-fluid">
+                    <h4>Accesibilidad</h4>
+                    <p>Creemos que la moda debe ser accesible para todos, reflejando esto en nuestros precios
+                        competitivos.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/compromiso.jpg" alt="Compromiso con el Cliente" class="img-fluid">
+                    <h4>Compromiso con el Cliente</h4>
+                    <p>Valoramos la satisfacción del cliente y nos esforzamos por ofrecer un servicio excepcional.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/innovacion.jpg" alt="Innovación" class="img-fluid">
+                    <h4>Innovación</h4>
+                    <p>Buscamos constantemente nuevas ideas y enfoques en el diseño y la comercialización de
+                        nuestros
+                        productos.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/colaboracion.jpg" alt="Colaboración" class="img-fluid">
+                    <h4>Colaboración</h4>
+                    <p>Fomentamos un ambiente de trabajo en equipo y colaboración, promoviendo un sentido de
+                        comunidad.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card p-3">
+                    <img src="img/valores/responsabilidad.jpg" alt="Responsabilidad Social" class="img-fluid">
+                    <h4>Responsabilidad Social</h4>
+                    <p>Nos comprometemos a contribuir positivamente a la comunidad y al entorno.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <h2 class="section-title">Nuestros Objetivos</h2>
+        <div class="objectives-section row">
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Abrir 10 tiendas</h4>
+                    <p>Expandir nuestra presencia en el mercado nacional en los próximos 3 años.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Implementar un sistema de fidelización</h4>
+                    <p>Desarrollar un programa de recompensas en el primer año.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Atención al cliente multicanal</h4>
+                    <p>Ofrecer atención a través de chat en línea, redes sociales y teléfono.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Campañas de marketing estacionales</h4>
+                    <p>Lanzar al menos 4 campañas de marketing al año.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Línea exclusiva de productos</h4>
+                    <p>Introducir una colección de ropa y accesorios de marca propia en el segundo año.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Aumentar la rotación de inventario</h4>
+                    <p>Implementar estrategias para aumentar la rotación en un 20% en el primer año.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Eventos de lanzamiento de productos</h4>
+                    <p>Organizar al menos 2 eventos de lanzamiento por año.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Alianzas con marcas complementarias</h4>
+                    <p>Colaborar con al menos 5 marcas de accesorios o calzado.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Sistema de gestión de inventario</h4>
+                    <p>Implementar tecnología para un seguimiento preciso del inventario.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="objective-card p-3" style="background-color: #f0f8ff; border: 2px solid coral;">
+                    <h4>Estudios de mercado anuales</h4>
+                    <p>Realizar investigaciones de mercado cada año para identificar tendencias emergentes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nuestro Equipo -->
+        <h2 class="section-title">Nuestro Equipo</h2>
+        <div class="team-section">
+            <div class="team-member text-center">
+                <img src="team1.jpg" alt="Juan Pérez">
+                <h4>Juan Pérez</h4>
+                <p>Fundador y CEO</p>
+            </div>
+            <div class="team-member text-center">
+                <img src="team2.jpg" alt="Ana Gómez">
+                <h4>Ana Gómez</h4>
+                <p>Directora de Marketing</p>
+            </div>
+            <div class="team-member text-center">
+                <img src="team3.jpg" alt="Luis Martínez">
+                <h4>Luis Martínez</h4>
+                <p>Director de Diseño</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <img src="img/logo2.png" alt="60" height="60">
+                <p class="pt-3">Fringilla urna porttitor rhoncus dolor purus luctus venenatis lectus magna
+                    fringilla diam maecenas ultricies mi eget mauris.</p>
+            </div>
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h5 class="pb-2">Destacado</h5>
+                <ul class="text-uppercase list-unstyled">
+                    <li><a href="#">Hombre</a></li>
+                    <li><a href="#">Mujer</a></li>
+                    <li><a href="#">Niño</a></li>
+                    <li><a href="#">Niña</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Tenis</a></li>
+                    <li><a href="#">Ropa</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+                <h5 class="pb-2">Contáctanos</h5>
+                <div>
+                    <h6 class="text-uppercase">Dirección</h6>
+                    <p>123 Calle Nombre, Ciudad</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Teléfono</h6>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div>
+                    <h6 class="text-uppercase">Correo</h6>
+                    <p>mail@example.com</p>
+                </div>
+            </div>
+
+            <div class="footer-one col-lg-3 col-md-6 col-12">
+                <h5 class="pb-2">Instagram</h5>
+                <div class="row">
+                    <img class="img-fluid w-25 h-100 m-2" src="img/instagram/1.jpg" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="img/instagram/2.jpg" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="img/instagram/3.jpg" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="img/instagram/4.jpg" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="img/instagram/5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright mt-5">
+            <div class="row container mx-auto">
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <img src="img/payment.png" alt="">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2">
+                    <p>Chameleons eCommerce © 2025. All Rights Reserved</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
