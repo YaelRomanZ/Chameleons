@@ -10,6 +10,4 @@ if ($conex->connect_error) {
     die("Conexión fallida: " . $conex->connect_error);
 }
 
-echo "Conectado a la base de datos correctamente";
-
 ?>
